@@ -1,0 +1,7 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop workingRewriteBase /
+RewriteEngine On
+RewriteBase /
+RewriteRule ^create(.*)$ create.php?$1 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ process.php?slug=$1 [L,QSA]
